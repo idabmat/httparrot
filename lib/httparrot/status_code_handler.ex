@@ -2,7 +2,7 @@ defmodule HTTParrot.StatusCodeHandler do
   @moduledoc """
   Returns given HTTP Status code.
   """
-  use HTTParrot.Cowboy, methods: ~w(GET HEAD OPTIONS)
+  use HTTParrot.Cowboy, methods: ~w(GET POST PUT PATCH DELETE HEAD OPTIONS)
 
   def content_types_provided(req, state) do
     {[{{"application", "json", []}, :get_json}], req, state}
